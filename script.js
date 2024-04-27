@@ -7,7 +7,7 @@ function updateEffectRow(i) {
     const cells = rows[i].getElementsByTagName('td');
     for (let j = 1; j < cells.length; j++) {
         const value = cells[j].textContent;
-        if (value === 'Да') {
+        if (value === 'Yes') {
             console.log(j, headers[j]);
             headers[j].classList.remove('hidden');
             cells[j].classList.remove('hidden');
@@ -25,11 +25,9 @@ function showEffectRow() {
 
     for (let i = 1; i < rows.length; i++) {
         if (rows[i].children[0].textContent === effectName) {
-            // Показываем строку с нужным эффектом
             rows[i].classList.remove('hidden');
             updateEffectRow(i);
         } else {
-            // Скрываем остальные строки
             rows[i].classList.add('hidden');
         }
     }
